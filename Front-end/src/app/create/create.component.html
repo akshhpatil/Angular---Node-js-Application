@@ -1,0 +1,70 @@
+<div class="container">
+    <!-- show error msg -->
+    <div *ngIf="errMsg" class="alert alert-danger " role="alert">
+        <strong>{{errMsg}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- Success message -->
+    <div *ngIf="SuccessMsg" class="alert alert-success" role="alert">
+        <strong>{{SuccessMsg}}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+
+
+
+    <form [formGroup]="userForm">
+
+        <div class="col-md-12 ">
+            <input type="text" class="form-control" formControlName="fullname" placeholder="Enter Full Name">
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="mobile" placeholder="Enter Mobile Number">
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="address" placeholder="Enter Address">
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="education" placeholder="Enter Education details">
+        </div>
+        <br>
+
+        
+        <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="country" placeholder="Enter Country">
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <input type="text" class="form-control" formControlName="state" placeholder="Enter State">
+        </div>
+        <br>
+
+        <div *ngIf="!getparamId" style="text-align: center;" class="col-md-12">
+            <button (click)="StudSubmit()" type="submit" class="btn btn-success btn-lg">Add New Student</button>
+        </div>
+
+        <div *ngIf="getparamId" style="text-align: center;" class="col-md-12">
+            <button (click)="updateStud()" type="submit" class="btn btn-success btn-lg">Update Student Details</button>
+        </div>
+
+
+        <br>
+
+    </form>
+</div>
